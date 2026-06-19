@@ -40,7 +40,7 @@ public class Day7{
     public static void main(String[] args) {
         LeaveRequest leave = new LeaveRequest(
                 "harini",
-                "09-00-2026",
+                "31-10-2026",
                 "Fever");
         leave.applyLeave();
         leave.displayDetails();
@@ -48,7 +48,7 @@ public class Day7{
         System.out.println();
         OnDutyRequest onDuty = new OnDutyRequest(
                 "harini",
-                "11-07-2026",
+                "11-06-2026",
                 "College Seminar");
         onDuty.applyOnDuty();
         onDuty.displayDetails();
