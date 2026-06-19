@@ -1,24 +1,58 @@
-void main() {
-    //int[] marks = int[5];
-    int[][] marks = new int[5][3];
-    int[][] studentMarks = {
-            {78, 90, 34},
-            {89, 65, 89},
-            {12, 34, 56},
-            {66, 12, 89},
-            {33, 77, 88}
-
-    };
-    for (int row = 0; row < studentMarks.length; row++) {
-        //0{79.90,34},
-        //1{89,65,89},
-        //2{66,12,89},
-        //3{66,12,89},
-        //4{66,12,89},
-        //5{33,77,88}\
-        for (int col = 0; col < studentMarks[row].length; col++) {
-            System.out.print(studentMarks[row][col] + " ");
+public class Day7{
+    static class Request {
+        private String name;
+        private String date;
+        private String reason;
+        Request(String name, String date, String reason) {
+            this.name = name;
+            this.date = date;
+            this.reason = reason;
         }
+        void displayDetails() {
+            System.out.println("Name   : " + name);
+            System.out.println("Date   : " + date);
+            System.out.println("Reason : " + reason);
+        }
+        void approve() {
+            System.out.println("Request Approved");
+        }
+        void reject() {
+            System.out.println("Request Rejected");
+        }
+    }
+    static class LeaveRequest extends Request {
+
+        LeaveRequest(String name, String date, String reason) {
+            super(name, date, reason);
+        }
+        void applyLeave() {
+            System.out.println("Leave Request");
+        }
+    }
+    static class OnDutyRequest extends Request {
+        OnDutyRequest(String name, String date, String reason) {
+            super(name, date, reason);
+        }
+        void applyOnDuty() {
+            System.out.println("On-Duty Request");
+        }
+    }
+    public static void main(String[] args) {
+        LeaveRequest leave = new LeaveRequest(
+                "harini",
+                "09-00-2026",
+                "Fever");
+        leave.applyLeave();
+        leave.displayDetails();
+        leave.approve();
         System.out.println();
+        OnDutyRequest onDuty = new OnDutyRequest(
+                "harini",
+                "11-07-2026",
+                "College Seminar");
+        onDuty.applyOnDuty();
+        onDuty.displayDetails();
+        onDuty.reject();
     }
 }
+
